@@ -68,3 +68,44 @@ export default tseslint.config([
   },
 ])
 ```
+
+# Portfólio Daniel Pereira
+
+## Registro de Funcionamento
+
+![Portfólio rodando - tema escuro](./screenshot-dark.png)
+
+## Implementações Técnicas
+
+- Estrutura do projeto criada com Vite + React + TypeScript.
+- Layout responsivo e moderno, com uso de CSS Grid e Flexbox.
+- Seção de apresentação (hero) com nome, título, descrição e botões de navegação.
+- Seção "Sobre Mim" com foto de perfil, informações pessoais e botão para download do currículo em PDF.
+- Seção de habilidades técnicas exibidas em cards de ícones, separadas por categoria (Frontend, Backend, Outras Tecnologias).
+- Seção de cursos e formação acadêmica em cards, com ícones representativos e layout responsivo.
+- Seção de projetos em destaque, com cards, ícones, descrição, tecnologias utilizadas e links para código/demo.
+- Seção de contato com informações, redes sociais e formulário funcional.
+- Suporte a tema claro e escuro, com alternância dinâmica via botão fixo no topo da página.
+- Utilização de variáveis CSS para cores principais, facilitando a manutenção e a troca de tema.
+- Favicon e manifest configurados para compatibilidade com dispositivos e PWA.
+- Estrutura preparada para deploy em Vercel, com build otimizado para produção.
+- Código organizado em componentes reutilizáveis e arquivos separados por responsabilidade.
+
+## Como rodar o projeto
+
+1. Instale as dependências:
+   ```sh
+   npm install
+   ```
+2. Rode o projeto em modo desenvolvimento:
+   ```sh
+   npm run dev
+   ```
+3. Para build de produção:
+   ```sh
+   npm run build
+   ```
+
+## Deploy
+
+O projeto está pronto para deploy em plataformas como Vercel, Netlify ou GitHub Pages. Basta importar o repositório e seguir o fluxo padrão da plataforma escolhida.

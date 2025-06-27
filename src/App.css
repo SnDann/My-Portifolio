@@ -44,8 +44,8 @@
 body {
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
-  background: linear-gradient(120deg, #0a1026 60%, #181f3a 100%) !important;
-  color: #222;
+  background: var(--color-bg-gradient) !important;
+  color: var(--color-text-main);
 }
 
 .container {
@@ -268,22 +268,23 @@ footer {
   position: fixed;
   top: 18px;
   right: 18px;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: var(--color-btn-gradient);
+  color: #fff;
+  border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 8px #232b4a33;
+  transition: background 0.2s, color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  z-index: 100;
-  transition: background 0.2s, border 0.2s;
 }
 .theme-toggle:hover {
-  background: #f3f3f3;
-  border: 1px solid #888;
+  filter: brightness(1.1);
 }
 
 body.dark {
@@ -601,7 +602,7 @@ body.dark .right-column > * {
 
 .main-bg {
   min-height: 100vh;
-  background: linear-gradient(120deg, #0a1026 60%, #181f3a 100%);
+  background: var(--color-bg-gradient);
   color: #fff;
   font-family: 'Inter', Arial, sans-serif;
 }
@@ -715,7 +716,7 @@ body.dark .right-column > * {
   display: inline-block;
   margin-right: 12px;
   letter-spacing: 0.5px;
-  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  background: var(--color-btn-gradient);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -1300,39 +1301,55 @@ body.dark .right-column > * {
   display: inline-block;
 }
 
-.sobre-avatar-img {
+.sobre-avatar-bg.sobre-avatar-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px auto;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 8px 32px 0 #2563eb33, 0 2px 8px rgba(0,0,0,0.10);
   width: 180px;
   height: 180px;
+  position: relative;
+}
+.sobre-avatar-img {
+  width: 168px;
+  height: 168px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #232b4a;
-  box-shadow: 0 8px 32px rgba(36,99,235,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  border: 4px solid #232b4a;
   background: #fff;
+  box-shadow: 0 4px 24px rgba(36,99,235,0.18);
   transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
   filter: grayscale(8%) contrast(1.08);
 }
 .sobre-avatar-img:hover {
-  transform: scale(1.035) rotate(-1deg);
+  transform: scale(1.045) rotate(-1deg);
   box-shadow: 0 12px 40px rgba(36,99,235,0.28), 0 4px 16px rgba(0,0,0,0.13);
-  filter: grayscale(0%) contrast(1.12);
-}
-.sobre-avatar-animada {
-  animation: fadeInUpSobre 0.8s cubic-bezier(.4,0,.2,1);
-}
-@keyframes fadeInUpSobre {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  filter: grayscale(0%) contrast(1.12) brightness(1.08);
 }
 @media (max-width: 900px) {
+  .sobre-avatar-bg.sobre-avatar-mobile {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 18px;
+  }
   .sobre-avatar-img {
-    width: 110px;
-    height: 110px;
+    width: 108px;
+    height: 108px;
   }
 }
 @media (max-width: 600px) {
+  .sobre-avatar-bg.sobre-avatar-mobile {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 12px;
+  }
   .sobre-avatar-img {
-    width: 70px;
-    height: 70px;
+    width: 78px;
+    height: 78px;
   }
 }
 
@@ -1479,7 +1496,14 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin: 0 auto 32px auto;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 8px 32px 0 #2563eb33, 0 2px 8px rgba(0,0,0,0.10);
+  width: 180px;
+  height: 180px;
+  position: relative;
 }
 @media (min-width: 901px) {
   .sobre-avatar-bg.sobre-avatar-mobile {
@@ -1500,4 +1524,19 @@ html {
     width: 110px !important;
     height: 110px !important;
   }
+}
+
+:root {
+  --color-bg-gradient: linear-gradient(120deg, #0a1026 60%, #181f3a 100%);
+  --color-text-main: #fff;
+  --color-text-secondary: #bfc9db;
+  --color-primary: #7c3aed;
+  --color-btn-gradient: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+}
+body.light {
+  --color-bg-gradient: linear-gradient(120deg, #f7f7f7 60%, #e3e3e3 100%);
+  --color-text-main: #181f3a;
+  --color-text-secondary: #444;
+  --color-primary: #2563eb;
+  --color-btn-gradient: linear-gradient(90deg, #7c3aed 0%, #2563eb 100%);
 }
