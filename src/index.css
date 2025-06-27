@@ -1,0 +1,90 @@
+:root {
+  --color-bg: #0a1120;
+  --color-bg-gradient: radial-gradient(ellipse at center, #151a2e 0%, #0a1120 100%);
+  --color-text-main: #f1f5fb;
+  --color-text-secondary: #bfc9db;
+  --color-primary: #2563eb;
+  --color-secondary: #7c3aed;
+  --color-btn-gradient: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  --color-btn-secondary: transparent;
+  --color-border: #f1f5fb;
+  --color-icon: #f1f5fb;
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: var(--color-bg-gradient);
+  color: var(--color-text-main);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-bg-gradient);
+  color: var(--color-text-main);
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--color-primary);
+}
+a:hover {
+  color: var(--color-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-main);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+p, span, li, label {
+  color: var(--color-text-secondary);
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.8em 2em;
+  font-size: 1.1em;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-btn-gradient);
+  color: var(--color-text-main);
+  box-shadow: 0 2px 8px 0 rgba(36, 99, 235, 0.10);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+button.secondary {
+  background: var(--color-btn-secondary);
+  color: var(--color-text-main);
+  border: 2px solid var(--color-border);
+}
+button:hover {
+  filter: brightness(1.1);
+}
+
+/* Ícones sociais */
+.social-icons svg {
+  fill: var(--color-icon);
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  transition: filter 0.2s;
+}
+.social-icons svg:hover {
+  filter: brightness(1.5);
+}
+
+/* Remover tema claro automático */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--color-text-main);
+    background: var(--color-bg-gradient);
+  }
+  a:hover {
+    color: var(--color-secondary);
+  }
+  button {
+    background: var(--color-btn-gradient);
+  }
+}
