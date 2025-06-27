@@ -1,13 +1,5 @@
-import { useEffect, useState } from 'react';
 import { SiHtml5, SiDotnet } from 'react-icons/si';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-
-interface Repo {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-}
 
 const projetosDestaque = [
   {
@@ -36,21 +28,7 @@ const projetosDestaque = [
   },
 ];
 
-const GITHUB_USER = 'SnDann';
-
 const Projetos = () => {
-  const [repos, setRepos] = useState<Repo[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=6`)
-      .then((res) => res.json())
-      .then((data: Repo[]) => {
-        setRepos(data.filter((repo) => repo.name !== 'projeto-LandingPage' && repo.name !== 'trilha-net-fundamentos-desafio' && repo.name !== 'trilha-net-poo-desafio'));
-        setLoading(false);
-      });
-  }, []);
-
   return (
     <section className="projetos-section" id="projetos-destaque">
       <h2 className="projetos-title">Projetos em Destaque</h2>

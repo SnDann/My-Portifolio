@@ -1,4 +1,3 @@
-import React from 'react';
 import { SiSupabase, SiCplusplus, SiDotnet, SiC, SiJavascript, SiHtml5, SiTypescript, SiReact, SiBootstrap, SiGit, SiGithub } from 'react-icons/si';
 import './Skill.css';
 
